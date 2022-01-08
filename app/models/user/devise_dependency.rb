@@ -46,6 +46,11 @@ class User
     update_with_password(params)
   end
 
+  # 删除用户密码
+  def destroy_password
+    clean_up_passwords
+  end
+
   def confirmation_required?
     Setting.confirmable_enable?
   end

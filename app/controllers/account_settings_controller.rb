@@ -43,6 +43,10 @@ class AccountSettingsController < ApplicationController
     end
   end
 
+  def destroy_password
+    @user.destroy_password
+  end
+
   def update_profile
     if @user.update(user_params)
       redirect_to account_settings_path, notice: t(".You have successfully updated your profile", locale: set_locale)
